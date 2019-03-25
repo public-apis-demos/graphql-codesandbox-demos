@@ -1,10 +1,13 @@
 import React from "react";
 import ApolloClient, { gql } from "apollo-boost";
 import { ApolloProvider, Query } from "react-apollo";
+import { Spinner, Error } from "./loading";
+import { URL } from "./const";
+
 import "../css/style.css";
 
 const client = new ApolloClient({
-  uri: "https://48p1r2roz4.sse.codesandbox.io"
+  uri: URL
 });
 
 const ExchangeRates = () => (
@@ -20,8 +23,8 @@ const ExchangeRates = () => (
     `}
   >
     {({ loading, error, data }) => {
-      if (loading) return <p>Loading...</p>;
-      if (error) return <p>Error :(</p>;
+      if (loading) return <Spinner />;
+      if (error) return <Error />;
 
       return data.rates.map(({ currency, rate, name }) => (
         <div key={currency}>
