@@ -1,0 +1,27 @@
+{
+  "name": "graphql-codesandbox-demos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/public-apis-demos/graphql-codesandbox-demos",
+  "author": "Srinivas K <skasiriveni@innominds.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "watch": "lerna run --parallel watch",
+    "server": "live-server"
+  },
+  "devDependencies": {
+    "lerna": "^3.13.1",
+    "live-server": "^1.2.1"
+  },
+  "dependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-router-dom": "^5.0.0"
+  }
+}
